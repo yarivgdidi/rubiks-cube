@@ -23,14 +23,7 @@
 </head>
 	<body  ng-app="rubiks-app" ng-controller="rubiks-controller as RUBIKS" ng-init="RUBIKS.start()" ng-class="{mobile: RUBIKS.isMobile, desktop: !RUBIKS.isMobile}" >
 
-		<div
-		  class="fb-like"
-		  data-share="true"
-		  data-width="450"
-		  data-show-faces="true">
-		</div>
-
-		<div id="ThreeJS" style="position: absolute; left:0; top:0; width: 100vw; height: 100vh" ></div>
+	 	<div id="ThreeJS" style="position: absolute; left:0; top:0; width: 100vw; height: 100vh" ></div>
 
 		<div class="cube-control top"  ng-class="{'custom-mode':RUBIKS.isCustom , 'colorBlink':RUBIKS.colorBlink  }" >
 			<div class="cube-button grey command"  ng-click="RUBIKS.scrumble()" ng-bind="RUBIKS.scrumbleButton"></div>
@@ -47,25 +40,19 @@
 			</span>
 			<span ng-show="RUBIKS.isCustom && !RUBIKS.solving ">
 				<div class="cube-button white" ng-class="{'active':RUBIKS.colorActive['white']  }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('u!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('u', 'white')"  ng-bind-html="RUBIKS.getCount('white')"></span>
 				</div>
 				<div class="cube-button green"  ng-class="{'active':RUBIKS.colorActive['green'] }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('f!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('f', 'green')" ng-bind-html="RUBIKS.getCount('green')"></span></div>
 				<div class="cube-button red"  ng-class="{'active':RUBIKS.colorActive['red'] }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('r!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('r', 'red')"  ng-bind-html="RUBIKS.getCount('red')"></span>
 				</div>
 				<div class="cube-button blue"  ng-class="{'active':RUBIKS.colorActive['blue'] }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('b!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('b', 'blue')"  ng-bind-html="RUBIKS.getCount('blue')"></span>
 				</div>
 				<div class="cube-button orange"  ng-class="{'active':RUBIKS.colorActive['orange'] }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('l!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('l', 'orange')"  ng-bind-html="RUBIKS.getCount('orange')"></span></div>
 				<div class="cube-button yellow"   ng-class="{'active':RUBIKS.colorActive['yellow'] }">
-					<!--<span ng-hide="RUBIKS.isCustom" class="ccw" ng-click="RUBIKS.spin('d!')">&#9668;</span>-->
 					<span class="cw" ng-click="RUBIKS.spin('d', 'yellow')"  ng-bind-html="RUBIKS.getCount('yellow')"></span>
 				</div>
 			</span>
@@ -81,12 +68,12 @@
 
 		<div class="cube-control bottom" ng-show=" RUBIKS.solution.length > 0">
 			<div ng-bind="RUBIKS.solution[RUBIKS.currentState]['stateName']"></div ><div ng-bind="RUBIKS.solution[RUBIKS.currentState]['cameraPosition']" ></div>
-			<div class="cube-button command solver grey"  ng-click="RUBIKS.backOneStep()">&#9668;&#9668;</div>
-			<div class="cube-button command solver grey"  ng-click="RUBIKS.backOneMove()">&#9668;</div>
-			<div class="cube-button command solver grey"  ng-click="RUBIKS.nextMove(0)">&#9658;</div>
-			<div class="cube-button command solver grey" ng-click="RUBIKS.statePreview()">&#9658;&#9655;</div>
-			<div class="cube-button command solver grey" ng-click="RUBIKS.nextState()">&#9658;&#9658;</div>
-			<div class="cube-button command solver grey" ng-click="RUBIKS.runToEnd()">&#9658;&#9658;&#9658;</div>
+			<div class="cube-button command solver grey"  ng-click="RUBIKS.backOneStep()" title="Backward one state">&#9668;&#9668;</div>
+			<div class="cube-button command solver grey"  ng-click="RUBIKS.backOneMove()" title="Backward one turn" >&#9668;</div>
+			<div class="cube-button command solver grey"  ng-click="RUBIKS.nextMove(0)" title="Forward one turn">&#9658;</div>
+			<div class="cube-button command solver grey" ng-click="RUBIKS.statePreview()" title="State preview">&#9658;&#9655;</div>
+			<div class="cube-button command solver grey" ng-click="RUBIKS.nextState()" title="Go to next state">&#9658;&#9658;</div>
+			<div class="cube-button command solver grey" ng-click="RUBIKS.runToEnd()" title="Run to the end">&#9658;&#9658;&#9658;</div>
 		</div>
 	</body>
 </html>
