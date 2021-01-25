@@ -1,0 +1,143 @@
+body
+{
+	overflow: hidden;
+	font-family: Tahoma, Geneva, sans-serif
+}
+.cube-control .stateEditor .cube-button.command,
+.cube-control .stateEditor .editorInput
+{
+	width: 24.8%;
+}
+.editorInput{
+	float: left;
+	height: 34px;
+	text-align: center;
+
+}
+ul.moves {
+	padding: 0;
+}
+
+ul.moves li {
+	list-style: none;
+	float: left;
+	margin-right: 5px;
+}
+
+ul.moves li.active{
+	color: red;
+}
+
+.clear-fix {
+	clear: both !important;
+	float: none !important;
+}
+
+.cube-control{
+	position: fixed;
+	left: 0;
+	width: 100%;
+}
+
+.desktop .cube-control{
+	max-width: 600px;
+	left: 50%;
+	margin-left: -300px;
+
+}
+.cube-control.top{
+	top: 0;
+}
+
+.cube-control.bottom{
+	bottom: 0;
+}
+
+.cube-control .cube-button{
+	height: 40px;
+	width: 16.667%;
+	float: left;
+}
+.cube-control .cube-button.disabled{
+	color: #999999;
+}
+.cube-button.move{
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+	line-height: 40px;
+	text-align: center;
+}
+
+.cube-button.move{
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+	line-height: 40px;
+	text-align: center;
+	font-size:24px;
+}
+
+.cube-button.move.active{
+	border-bottom: 4px solid gray;
+}
+.cube-control .cube-button.command{
+	width:33.33%;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	box-sizing: border-box;
+	line-height: 40px;
+	text-align: center;
+}
+
+.cube-control.bottom .cube-button.solver{
+	width: 16.667%;
+}
+
+.cube-control .cube-button span{
+
+	display: inline-block;
+	width: 50%;
+	line-height: 40px;
+	text-align: center;
+
+	float: left
+}
+
+.cube-control .cube-button span.ccw{
+	border-right: 1px solid silver;
+}
+.cube-control .cube-button span.cw{
+	margin-left: -1px;
+}
+
+.cube-control.custom-mode .cube-button span.cw {
+	width: 100%;
+
+}
+.cube-control .cube-button.grey {
+	background-color: #aaaaaa;
+}
+
+.cube-button.active{
+	border-bottom: 4px solid grey;
+}
+
+.cube-control .cube-button.white {
+	background-color: #eceadc;
+}
+.cube-control .cube-button.green {
+	background-color: #38c53f;
+}
+.cube-control .cube-button.red {
+	background-color: #f61d50;
+}
+.cube-control .cube-button.yellow {
+	background-color: #f5e126;
+}
+.cube-control .cube-button.orange {
+	background-color: #fa741a;
+}
+.cube-control .cube-button.blue {
+	background-color: #2983d8;
+}
